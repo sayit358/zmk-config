@@ -73,13 +73,13 @@
         };
 
         left_brace {
-            bindings = <&kp LEFT_BRACE>;
+            bindings = <&kp LEFT_BRACKET>;
             key-positions = <14 15>;
             layers = <0>;
         };
 
         right_brace {
-            bindings = <&kp RIGHT_BRACE>;
+            bindings = <&kp RIGHT_BRACKET>;
             key-positions = <21 20>;
             layers = <0>;
         };
