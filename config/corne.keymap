@@ -9,13 +9,25 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+
+  behaviors {
+        bhm: balanced_homerow_mods {
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
 &kp TAB        &kp Q  &kp W  &kp F  &kp P     &kp B        &kp J      &kp L     &kp U      &kp Y    &kp SEMI  &kp MINUS
-&mt LCTRL ESC  &kp A  &kp R  &kp S  &kp T     &kp G        &kp M      &kp N     &kp E      &kp I    &kp O     &kp APOS
+&mt LCTRL ESC  &bhm LGUI A  &bhm LALT R  &bhm LCTRL S  &bhm LSHIFT T     &kp G        &kp M      &kp N     &kp E      &kp I    &kp O     &kp APOS
 &kp LSHFT      &kp Z  &kp X  &kp C  &kp D     &kp V        &kp K      &kp H     &kp COMMA  &kp DOT  &kp FSLH  &caps_word
                              &mo 1  &kp LALT  &kp SPACE    &kp ENTER  &kp BSPC  &mo 1
             >;
