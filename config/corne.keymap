@@ -27,7 +27,7 @@
             compatible = "zmk,behavior-caps-word";
             label = "CW";
             #binding-cells = <0>;
-            continue-list = <UNDERSCORE>;
+            continue-list = <UNDERSCORE SPACE>;
         };
 
         bht: bht {
@@ -50,7 +50,7 @@
 
         caps_lock {
             bindings = <&kp CAPS>;
-            key-positions = <24 35>;
+            key-positions = <0 11>;
             layers = <0>;
         };
 
@@ -68,7 +68,7 @@
 
         cw {
             bindings = <&cw>;
-            key-positions = <0 11>;
+            key-positions = <24 35>;
             layers = <0>;
         };
 
