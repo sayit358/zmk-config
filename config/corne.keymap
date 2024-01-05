@@ -44,6 +44,24 @@
             hold-trigger-key-positions = <14 15 16 2 3 4 5 17 29 28 27 26>;
             label = "BHT";
         };
+
+        left_brace: left_brace {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_BRACE";
+            bindings = <&kp LEFT_BRACE>, <&kp LEFT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        right_brace: right_brace {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_BRACE";
+            bindings = <&kp RIGHT_BRACE>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -74,13 +92,13 @@
         };
 
         left_brace {
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&left_brace>;
             key-positions = <14 15>;
             layers = <0>;
         };
 
         right_brace {
-            bindings = <&kp RIGHT_BRACKET>;
+            bindings = <&right_brace>;
             key-positions = <21 20>;
             layers = <0>;
         };
