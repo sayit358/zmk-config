@@ -28,7 +28,7 @@
             compatible = "zmk,behavior-caps-word";
             label = "CW";
             #binding-cells = <0>;
-            continue-list = <UNDERSCORE SPACE>;
+            continue-list = <UNDERSCORE>;
         };
 
         bht: bht {
@@ -120,6 +120,12 @@
             key-positions = <32 31>;
             layers = <1>;
         };
+
+        mute {
+            bindings = <&kp K_MUTE>;
+            key-positions = <13 22>;
+            layers = <1>;
+        };
     };
 
     keymap {
@@ -136,10 +142,10 @@
 
         raise_layer {
             bindings = <
-&trans        &kp C_VOLUME_UP    &bht F4 NUMBER_4  &bht F5 NUMBER_5  &bht F6 NUMBER_6  &bht F10 BACKSLASH    &kp HOME    &kp PAGE_DOWN   &kp PAGE_UP  &kp END     &none  &none
-&trans        &kp K_MUTE         &bht F1 NUMBER_1  &bht F2 NUMBER_2  &bht F3 NUMBER_3  &bht F11 EQUAL        &kp LEFT    &kp DOWN        &kp UP       &kp RIGHT   &none  &none
-&out OUT_TOG  &kp C_VOLUME_DOWN  &bht F7 NUMBER_7  &bht F8 NUMBER_8  &bht F9 NUMBER_9  &bht F12 GRAVE        &bt BT_PRV  &kp C_PREVIOUS  &kp C_NEXT   &bt BT_NXT  &none  &trans
-                                                   &none             &kp N0            &trans                &trans      &trans          &none
+&none   &none              &bht F4 NUMBER_4  &bht F5 NUMBER_5  &bht F6 NUMBER_6  &bht F10 BACKSLASH    &kp HOME    &kp PAGE_DOWN   &kp PAGE_UP  &kp END     &none            &none
+&none   &kp C_VOLUME_DOWN  &bht F1 NUMBER_1  &bht F2 NUMBER_2  &bht F3 NUMBER_3  &bht F11 EQUAL        &kp LEFT    &kp DOWN        &kp UP       &kp RIGHT   &kp C_VOLUME_UP  &none
+&trans  &none              &bht F7 NUMBER_7  &bht F8 NUMBER_8  &bht F9 NUMBER_9  &bht F12 GRAVE        &bt BT_PRV  &kp C_PREVIOUS  &kp C_NEXT   &bt BT_NXT  &none            &trans
+                                             &none             &kp N0            &trans                &trans      &out OUT_TOG    &none
             >;
         };
 
