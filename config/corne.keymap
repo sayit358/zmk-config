@@ -55,7 +55,7 @@
 
         cw {
             bindings = <&cw>;
-            key-positions = <17 18>;
+            key-positions = <0 11>;
             layers = <0>;
         };
 
@@ -85,7 +85,7 @@
 
         print {
             bindings = <&kp PRINTSCREEN>;
-            key-positions = <0 11>;
+            key-positions = <17 18>;
             layers = <0>;
         };
     };
@@ -104,10 +104,10 @@
 
         layer_4 {
             bindings = <
-&trans  &kp C_VOLUME_UP    &kp N4           &kp N5  &kp N6  &mt F10 BACKSLASH    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp C_NEXT        &none
-&trans  &kp K_MUTE         &mt F1 NUMBER_1  &kp N2  &kp N3  &kp EQUAL            &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp C_PLAY_PAUSE  &none
-&trans  &kp C_VOLUME_DOWN  &kp N7           &kp N8  &kp N9  &kp GRAVE            &none     &none          &none        &none      &kp C_PREVIOUS    &trans
-                                            &mo 2   &kp N0  &none                &none     &none          &mo 2
+&trans  &kp C_VOLUME_UP    &kp N4            &kp N5  &kp N6  &mt F10 BACKSLASH    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp C_NEXT        &none
+&trans  &kp K_MUTE         &bhm F1 NUMBER_1  &kp N2  &kp N3  &kp EQUAL            &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp C_PLAY_PAUSE  &none
+&trans  &kp C_VOLUME_DOWN  &kp N7            &kp N8  &kp N9  &kp GRAVE            &none     &none          &none        &none      &kp C_PREVIOUS    &trans
+                                             &mo 2   &kp N0  &none                &none     &none          &mo 2
             >;
         };
 
