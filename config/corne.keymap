@@ -30,6 +30,20 @@
             #binding-cells = <0>;
             continue-list = <UNDERSCORE>;
         };
+
+        bht: bht {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            #binding-cells = <2>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <14 15 16 2 3 4 5 17 29 28 27 26>;
+            label = "BHT";
+        };
     };
 
     combos {
@@ -104,9 +118,9 @@
 
         layer_4 {
             bindings = <
-&trans  &kp C_VOLUME_UP    &kp N4            &kp N5  &kp N6  &mt F10 BACKSLASH    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp C_NEXT        &none
-&trans  &kp K_MUTE         &bhm F1 NUMBER_1  &kp N2  &kp N3  &kp EQUAL            &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp C_PLAY_PAUSE  &none
-&trans  &kp C_VOLUME_DOWN  &kp N7            &kp N8  &kp N9  &kp GRAVE            &none     &none          &none        &none      &kp C_PREVIOUS    &trans
+&trans  &kp C_VOLUME_UP    &kp N4            &kp N5  &kp N6  &mt F10 BACKSLASH    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp C_NEXT        &bt BT_NXT
+&trans  &kp K_MUTE         &bht F1 NUMBER_1  &kp N2  &kp N3  &kp EQUAL            &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp C_PLAY_PAUSE  &bt BT_CLR
+&trans  &kp C_VOLUME_DOWN  &kp N7            &kp N8  &kp N9  &kp GRAVE            &none     &none          &none        &none      &kp C_PREVIOUS    &bt BT_PRV
                                              &mo 2   &kp N0  &none                &none     &none          &mo 2
             >;
         };
@@ -126,15 +140,6 @@
 &trans     &kp A  &kp S  &kp D  &kp F   &kp G        &kp H    &kp J          &kp K      &kp L     &kp UP_ARROW  &kp SQT
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V   &kp B        &kp N    &kp M          &kp COMMA  &kp LEFT  &kp DOWN      &kp RIGHT
                          &mo 0  &trans  &kp SPACE    &kp RET  &kp BACKSPACE  &mo 0
-            >;
-        };
-
-        lower_layer {
-            bindings = <
-&trans  &kp N1            &kp N2           &kp N3          &kp N4      &kp N5              &kp N6             &kp N7     &kp N8         &kp N9     &kp N0  &none
-&trans  &kp C_VOL_DN      &kp C_VOLUME_UP  &kp C_MUTE      &kp DELETE  &kp PRINTSCREEN     &kp LEFT           &kp DOWN   &kp UP         &kp RIGHT  &none   &none
-&trans  &kp C_PLAY_PAUSE  &kp C_NEXT       &kp C_PREVIOUS  &kp C_STOP  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp EQUAL  &kp BACKSLASH  &kp GRAVE  &trans  &none
-                                           &mo 2           &trans      &kp SPACE           &kp RET            &trans     &mo 2
             >;
         };
     };
