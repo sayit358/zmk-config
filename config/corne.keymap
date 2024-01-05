@@ -118,9 +118,9 @@
 
         layer_4 {
             bindings = <
-&trans  &kp C_VOLUME_UP    &kp N4            &kp N5  &kp N6  &mt F10 BACKSLASH    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp C_NEXT        &bt BT_NXT
-&trans  &kp K_MUTE         &bht F1 NUMBER_1  &kp N2  &kp N3  &kp EQUAL            &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp C_PLAY_PAUSE  &bt BT_CLR
-&trans  &kp C_VOLUME_DOWN  &kp N7            &kp N8  &kp N9  &kp GRAVE            &none     &none          &none        &none      &kp C_PREVIOUS    &bt BT_PRV
+&trans  &kp C_VOLUME_UP    &bht F4 NUMBER_4  &bht F5 NUMBER_5  &bht F6 NUMBER_6  &bht F10 BACKSLASH    &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp C_NEXT        &bt BT_NXT
+&trans  &kp K_MUTE         &bht F1 NUMBER_1  &bht F2 NUMBER_2  &bht F3 NUMBER_3  &bht F11 EQUAL            &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp C_PLAY_PAUSE  &bt BT_CLR
+&trans  &kp C_VOLUME_DOWN  &bht F7 NUMBER_7  &bht F8 NUMBER_8  &bht F9 NUMBER_9  &bht F12 GRAVE            &none     &none          &none        &none      &kp C_PREVIOUS    &bt BT_PRV
                                              &mo 2   &kp N0  &none                &none     &none          &mo 2
             >;
         };
