@@ -12,6 +12,7 @@
 
   behaviors {
         bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
             tapping-term-ms = <280>;
             #binding-cells = <2>;
