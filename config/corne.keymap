@@ -62,6 +62,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        bksp_del: bksp_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BKSP_DEL";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
     };
 
     combos {
@@ -70,18 +79,6 @@
         caps_lock {
             bindings = <&kp CAPS>;
             key-positions = <0 11>;
-            layers = <0>;
-        };
-
-        delete_left {
-            bindings = <&kp DELETE>;
-            key-positions = <14 16>;
-            layers = <0>;
-        };
-
-        delete_right {
-            bindings = <&kp DELETE>;
-            key-positions = <19 21>;
             layers = <0>;
         };
 
@@ -154,7 +151,7 @@
 &kp TAB     &kp Q         &kp W              &kp F            &kp P             &kp B        &kp J      &kp L         &kp U        &kp Y         &kp SEMI      &kp MINUS
 &kp ESCAPE  &bhm LCTRL A  &bhm LEFT_SHIFT R  &bhm LEFT_ALT S  &bhm LEFT_META T  &kp G        &kp M      &bhm RMETA N  &bhm RALT E  &bhm RSHFT I  &bhm RCTRL O  &kp APOS
 &kp LSHFT   &kp Z         &kp X              &kp C            &kp D             &kp V        &kp K      &kp H         &kp COMMA    &kp DOT       &kp FSLH      &kp RSHFT
-                                             &mo 1            &kp LALT          &kp SPACE    &kp ENTER  &kp BSPC      &mo 1
+                                             &mo 1            &kp LALT          &kp SPACE    &kp ENTER  &bksp_del     &mo 1
             >;
         };
 
