@@ -76,20 +76,12 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ESC_CAPS";
             #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&cw>, <&kp CAPSLOCK>;
-
-            tapping-term-ms = <100>;
+            bindings = <&kp ESCAPE>, <&kp CAPSLOCK>;
         };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        caps_lock {
-            bindings = <&kp CAPS>;
-            key-positions = <0 11>;
-            layers = <0>;
-        };
 
         cw {
             bindings = <&cw>;
