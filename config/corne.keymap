@@ -76,7 +76,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ESC_CAPS";
             #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&kp CAPSLOCK>;
+            bindings = <&kp ESCAPE>, <&kp CAPSLOCK>, <&cw>;
+
+            tapping-term-ms = <100>;
         };
     };
 
