@@ -7,44 +7,154 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
+    behaviors {
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            #binding-cells = <2>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;             // delay positional check until key-release
+            hold-trigger-key-positions = <13 14 15 16 19 20 21 22>;
+        };
+
+        cw: cw {
+            compatible = "zmk,behavior-caps-word";
+            label = "CW";
+            #binding-cells = <0>;
+            continue-list = <UNDERSCORE>;
+        };
+
+        bht: bht {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            #binding-cells = <2>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <14 15 16 2 3 4 5 17 29 28 27 26>;
+            label = "BHT";
+        };
+
+        left_brace: left_brace {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_BRACE";
+            bindings = <&kp LEFT_BRACE>, <&kp LEFT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        right_brace: right_brace {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_BRACE";
+            bindings = <&kp RIGHT_BRACE>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        bksp_del: bksp_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BKSP_DEL";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        caps_lock {
+            bindings = <&kp CAPS>;
+            key-positions = <0 11>;
+            layers = <0>;
+        };
+
+        cw {
+            bindings = <&cw>;
+            key-positions = <24 35>;
+            layers = <0>;
+        };
+
+        left_brace {
+            bindings = <&left_brace>;
+            key-positions = <14 15>;
+            layers = <0>;
+        };
+
+        right_brace {
+            bindings = <&right_brace>;
+            key-positions = <21 20>;
+            layers = <0>;
+        };
+
+        left_paren {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <15 16>;
+            layers = <0>;
+        };
+
+        right_paren {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <20 19>;
+            layers = <0>;
+        };
+
+        print {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <17 18>;
+            layers = <0>;
+        };
+
+        bt_clear {
+            bindings = <&bt BT_CLR>;
+            key-positions = <30 33>;
+            layers = <1>;
+        };
+
+        play_pause {
+            bindings = <&kp K_PLAY_PAUSE>;
+            key-positions = <32 31>;
+            layers = <1>;
+        };
+
+        mute {
+            bindings = <&kp K_MUTE>;
+            key-positions = <13 22>;
+            layers = <1>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp TAB        &kp Q  &kp W  &kp F  &kp P     &kp B        &kp J      &kp L     &kp U      &kp Y    &kp SEMI  &kp MINUS
-&mt LCTRL ESC  &kp A  &kp R  &kp S  &kp T     &kp G        &kp M      &kp N     &kp E      &kp I    &kp O     &kp APOS
-&kp LSHFT      &kp Z  &kp X  &kp C  &kp D     &kp V        &kp K      &kp H     &kp COMMA  &kp DOT  &kp FSLH  &caps_word
-                             &mo 1  &kp LALT  &kp SPACE    &kp ENTER  &kp BSPC  &mo 1
-            >;
-        };
-
-        lower_layer {
-            bindings = <
-&kp TAB  &kp N1            &kp N2           &kp N3          &kp N4      &kp N5              &kp N6             &kp N7     &kp N8         &kp N9     &kp N0        &none
-&trans   &kp C_VOL_DN      &kp C_VOLUME_UP  &kp C_MUTE      &kp DELETE  &kp PRINTSCREEN     &kp LEFT           &kp DOWN   &kp UP         &kp RIGHT  &none         &none
-&trans   &kp C_PLAY_PAUSE  &kp C_NEXT       &kp C_PREVIOUS  &kp C_STOP  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp EQUAL  &kp BACKSLASH  &kp GRAVE  &kp LEFT_GUI  &none
-                                            &mo 2           &trans      &kp SPACE           &kp RET            &trans     &mo 2
+&kp TAB     &kp Q             &kp W                &kp F              &kp P            &kp B        &kp J      &kp L             &kp U               &kp Y                 &kp SEMI           &kp MINUS
+&kp ESCAPE  &bhm LEFT_META A  &bhm LEFT_CONTROL R  &bhm LEFT_SHIFT S  &bhm LEFT_ALT T  &kp G        &kp M      &bhm RIGHT_ALT N  &bhm RIGHT_SHIFT E  &bhm RIGHT_CONTROL I  &bhm RIGHT_META O  &kp APOS
+&kp LSHFT   &kp Z             &kp X                &kp C              &kp D            &kp V        &kp K      &kp H             &kp COMMA           &kp DOT               &kp FSLH           &kp RSHFT
+                                                   &mo 1              &kp LALT         &kp SPACE    &kp ENTER  &bksp_del         &mo 1
             >;
         };
 
         raise_layer {
             bindings = <
-&kp CAPS  &kp F1      &kp F2         &kp F3      &kp F4  &kp F5       &kp F6   &kp F7  &kp F8  &kp F9  &kp F10  &none
-&trans    &bt BT_NXT  &bt BT_DISC 0  &bt BT_CLR  &none   &kp F11      &kp F12  &none   &none   &none   &none    &none
-&none     &none       &none          &none       &none   &none        &none    &none   &none   &none   &none    &tog 3
-                                     &none       &none   &kp SPACE    &kp RET  &none   &none
-            >;
-        };
-
-        qwerty_layer {
-            bindings = <
-&kp TAB    &kp Q  &kp W  &kp E  &kp R   &kp T        &kp Y    &kp U          &kp I      &kp O     &kp P         &kp MINUS
-&trans     &kp A  &kp S  &kp D  &kp F   &kp G        &kp H    &kp J          &kp K      &kp L     &kp UP_ARROW  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V   &kp B        &kp N    &kp M          &kp COMMA  &kp LEFT  &kp DOWN      &kp RIGHT
-                         &mo 1  &trans  &kp SPACE    &kp RET  &kp BACKSPACE  &mo 1
+&none   &none              &bht F4 NUMBER_4  &bht F5 NUMBER_5  &bht F6 NUMBER_6  &bht F10 BACKSLASH    &kp HOME    &kp PAGE_DOWN   &kp PAGE_UP  &kp END     &none            &none
+&none   &kp C_VOLUME_DOWN  &bht F1 NUMBER_1  &bht F2 NUMBER_2  &bht F3 NUMBER_3  &bht F11 EQUAL        &kp LEFT    &kp DOWN        &kp UP       &kp RIGHT   &kp C_VOLUME_UP  &none
+&trans  &none              &bht F7 NUMBER_7  &bht F8 NUMBER_8  &bht F9 NUMBER_9  &bht F12 GRAVE        &bt BT_PRV  &kp C_PREVIOUS  &kp C_NEXT   &bt BT_NXT  &none            &trans
+                                             &none             &kp N0            &trans                &trans      &out OUT_TOG    &none
             >;
         };
     };
