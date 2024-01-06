@@ -71,20 +71,13 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
-
-        esc_caps: esc_caps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ESC_CAPS";
-            #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&cw>;
-        };
     };
 
     combos {
         compatible = "zmk,combos";
 
         cw {
-            bindings = <&kp CAPSLOCK>;
+            bindings = <&cw>;
             key-positions = <24 35>;
             layers = <0>;
         };
@@ -143,10 +136,10 @@
 
         default_layer {
             bindings = <
-&kp TAB    &kp Q             &kp W                &kp F              &kp P            &kp B        &kp J      &kp L             &kp U               &kp Y                 &kp SEMI           &kp MINUS
-&esc_caps  &bhm LEFT_META A  &bhm LEFT_CONTROL R  &bhm LEFT_SHIFT S  &bhm LEFT_ALT T  &kp G        &kp M      &bhm RIGHT_ALT N  &bhm RIGHT_SHIFT E  &bhm RIGHT_CONTROL I  &bhm RIGHT_META O  &kp APOS
-&kp LSHFT  &kp Z             &kp X                &kp C              &kp D            &kp V        &kp K      &kp H             &kp COMMA           &kp DOT               &kp FSLH           &kp RSHFT
-                                                  &mo 1              &kp LALT         &kp SPACE    &kp ENTER  &bksp_del         &mo 1
+&kp TAB     &kp Q             &kp W                &kp F              &kp P            &kp B        &kp J      &kp L             &kp U               &kp Y                 &kp SEMI           &kp MINUS
+&kp ESCAPE  &bhm LEFT_META A  &bhm LEFT_CONTROL R  &bhm LEFT_SHIFT S  &bhm LEFT_ALT T  &kp G        &kp M      &bhm RIGHT_ALT N  &bhm RIGHT_SHIFT E  &bhm RIGHT_CONTROL I  &bhm RIGHT_META O  &kp APOS
+&kp LSHFT   &kp Z             &kp X                &kp C              &kp D            &kp V        &kp K      &kp H             &kp COMMA           &kp DOT               &kp FSLH           &kp RSHFT
+                                                   &mo 1              &kp LALT         &kp SPACE    &kp ENTER  &bksp_del         &mo 1
             >;
         };
 
