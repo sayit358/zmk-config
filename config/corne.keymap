@@ -34,7 +34,7 @@
         bht: bht {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <300>;
             #binding-cells = <2>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
@@ -43,33 +43,6 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <14 15 16 2 3 4 5 17 29 28 27 26>;
             label = "BHT";
-        };
-
-        left_brace: left_brace {
-            compatible = "zmk,behavior-mod-morph";
-            label = "LEFT_BRACE";
-            bindings = <&kp LEFT_BRACE>, <&kp LEFT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        right_brace: right_brace {
-            compatible = "zmk,behavior-mod-morph";
-            label = "RIGHT_BRACE";
-            bindings = <&kp RIGHT_BRACE>, <&kp RIGHT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        bksp_del: bksp_del {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BKSP_DEL";
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
         };
 
         bhm_r: balanced_homerow_mods_r {
@@ -96,13 +69,13 @@
         };
 
         left_brace {
-            bindings = <&left_brace>;
+            bindings = <&kp LEFT_BRACKET>;
             key-positions = <15 16>;
             layers = <0>;
         };
 
         right_brace {
-            bindings = <&right_brace>;
+            bindings = <&kp RIGHT_BRACKET>;
             key-positions = <20 19>;
             layers = <0>;
         };
