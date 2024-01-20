@@ -14,7 +14,7 @@
         bhm_l: balanced_homerow_mods_l {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <300>;
             #binding-cells = <2>;
             quick-tap-ms = <175>;                // repeat on tap-into-hold
             require-prior-idle-ms = <150>;
@@ -75,7 +75,7 @@
         bhm_r: balanced_homerow_mods_r {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <300>;
             #binding-cells = <2>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
