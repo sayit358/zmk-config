@@ -151,5 +151,13 @@
                                              &none             &kp N0            &trans                &trans      &out OUT_TOG    &none
             >;
         };
+    default_layers {
+            bindings = <
+&kp TAB     &kp Q             &kp W              &kp F         &kp P            &kp B        &kp J      &kp L             &kp U         &kp Y          &kp SEMI           &kp MINUS
+&kp ESCAPE  &bhm LEFT_META A  &bhm LEFT_SHIFT R  &bhm LCTRL S  &bhm LEFT_ALT T  &kp G        &kp M      &bhm RIGHT_ALT N  &bhm RCTRL E  &bhm RSHIFT I  &bhm RIGHT_META O  &kp APOS
+&kp LSHFT   &kp Z             &kp X              &kp C         &kp D            &kp V        &kp K      &kp H             &kp COMMA     &kp DOT        &kp FSLH           &kp RSHFT
+                                                 &mo 1         &kp LALT         &kp SPACE    &kp ENTER  &bksp_del         &mo 1
+            >;
+        };
     };
 };
