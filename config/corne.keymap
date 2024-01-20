@@ -122,10 +122,10 @@
 
         default_layer {
             bindings = <
-&kp TAB     &kp Q               &kp W                &kp F           &kp P              &kp B        &kp J      &kp L               &kp U           &kp Y            &kp SEMI             &kp MINUS
-&kp ESCAPE  &bhm_l LEFT_META A  &bhm_l LEFT_SHIFT R  &bhm_l LCTRL S  &bhm_l LEFT_ALT T  &kp G        &kp M      &bhm_r RIGHT_ALT N  &bhm_r RCTRL E  &bhm_r RSHIFT I  &bhm_r RIGHT_META O  &kp APOS
-&kp LSHFT   &kp Z               &kp X                &kp C           &kp D              &kp V        &kp K      &kp H               &kp COMMA       &kp DOT          &kp FSLH             &kp RSHFT
-                                                     &mo 1           &kp LALT           &kp SPACE    &kp ENTER  &kp BACKSPACE       &mo 1
+&kp TAB           &kp Q  &kp W  &kp F  &kp P     &kp B        &kp J      &kp L          &kp U      &kp Y    &kp SEMI  &kp MINUS
+&mt LCTRL ESCAPE  &kp A  &kp R  &kp S  &kp T     &kp G        &kp M      &kp N          &kp E      &kp I    &kp O     &mt RCTRL APOS
+&kp LSHFT         &kp Z  &kp X  &kp C  &kp D     &kp V        &kp K      &kp H          &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                                &mo 1  &kp LALT  &kp SPACE    &kp ENTER  &kp BACKSPACE  &mo 1
             >;
         };
 
@@ -133,7 +133,7 @@
             bindings = <
 &none   &none              &bht F4 NUMBER_4  &bht F5 NUMBER_5  &bht F6 NUMBER_6  &bht F10 BACKSLASH    &mt INSERT HOME  &kp PAGE_DOWN   &kp PAGE_UP  &mt DELETE END  &none            &none
 &none   &kp C_VOLUME_DOWN  &bht F1 NUMBER_1  &bht F2 NUMBER_2  &bht F3 NUMBER_3  &bht F11 EQUAL        &kp LEFT         &kp DOWN        &kp UP       &kp RIGHT       &kp C_VOLUME_UP  &none
-&trans  &none              &bht F7 NUMBER_7  &bht F8 NUMBER_8  &bht F9 NUMBER_9  &bht F12 GRAVE        &bt BT_PRV       &kp C_PREVIOUS  &kp C_NEXT   &bt BT_NXT      &none            &trans
+&trans  &kp LEFT_META      &bht F7 NUMBER_7  &bht F8 NUMBER_8  &bht F9 NUMBER_9  &bht F12 GRAVE        &bt BT_PRV       &kp C_PREVIOUS  &kp C_NEXT   &bt BT_NXT      &kp RIGHT_META   &trans
                                              &none             &kp N0            &trans                &trans           &out OUT_TOG    &none
             >;
         };
