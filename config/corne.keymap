@@ -145,18 +145,28 @@
 
         raise_layer {
             bindings = <
-&none   &none              &bht F4 NUMBER_4  &bht F5 NUMBER_5  &bht F6 NUMBER_6  &bht F10 BACKSLASH    &kp HOME    &kp PAGE_DOWN   &kp PAGE_UP  &kp END     &none            &none
+&none   &none              &bht F4 NUMBER_4  &bht F5 NUMBER_5  &bht F6 NUMBER_6  &bht F10 BACKSLASH    &kp HOME    &kp PAGE_DOWN   &kp PAGE_UP  &kp END     &tog 3           &none
 &none   &kp C_VOLUME_DOWN  &bht F1 NUMBER_1  &bht F2 NUMBER_2  &bht F3 NUMBER_3  &bht F11 EQUAL        &kp LEFT    &kp DOWN        &kp UP       &kp RIGHT   &kp C_VOLUME_UP  &none
-&trans  &none              &bht F7 NUMBER_7  &bht F8 NUMBER_8  &bht F9 NUMBER_9  &bht F12 GRAVE        &bt BT_PRV  &kp C_PREVIOUS  &kp C_NEXT   &bt BT_NXT  &none            &trans
+&trans  &none              &bht F7 NUMBER_7  &bht F8 NUMBER_8  &bht F9 NUMBER_9  &bht F12 GRAVE        &bt BT_PRV  &kp C_PREVIOUS  &kp C_NEXT   &bt BT_NXT  &tog 2           &trans
                                              &none             &kp N0            &trans                &trans      &out OUT_TOG    &none
             >;
         };
-    default_layers {
+
+        default_layers {
             bindings = <
-&kp TAB     &kp Q             &kp W              &kp F         &kp P            &kp B        &kp J      &kp L             &kp U         &kp Y          &kp SEMI           &kp MINUS
-&kp ESCAPE  &bhm LEFT_META A  &bhm LEFT_SHIFT R  &bhm LCTRL S  &bhm LEFT_ALT T  &kp G        &kp M      &bhm RIGHT_ALT N  &bhm RCTRL E  &bhm RSHIFT I  &bhm RIGHT_META O  &kp APOS
-&kp LSHFT   &kp Z             &kp X              &kp C         &kp D            &kp V        &kp K      &kp H             &kp COMMA     &kp DOT        &kp FSLH           &kp RSHFT
-                                                 &mo 1         &kp LALT         &kp SPACE    &kp ENTER  &bksp_del         &mo 1
+&kp TAB     &kp Q  &kp W  &kp F  &kp P     &kp B        &kp J      &kp L      &kp U      &kp Y    &kp SEMI  &kp MINUS
+&kp ESCAPE  &kp A  &kp R  &kp S  &kp T     &kp G        &kp M      &kp N      &kp E      &kp I    &kp O     &kp APOS
+&kp LSHFT   &kp Z  &kp X  &kp C  &kp D     &kp V        &kp K      &kp H      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                          &mo 1  &kp LALT  &kp SPACE    &kp ENTER  &bksp_del  &mo 1
+            >;
+        };
+
+        gaming {
+            bindings = <
+&kp TAB    &kp Q  &kp W  &kp E  &kp R     &kp T        &kp Y      &kp U     &kp I      &kp O    &kp P     &kp MINUS
+&kp ESC    &kp A  &kp S  &kp D  &kp F     &kp G        &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V     &kp B        &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                         &mo 1  &kp LALT  &kp SPACE    &kp ENTER  &kp RALT  &mo 1
             >;
         };
     };
